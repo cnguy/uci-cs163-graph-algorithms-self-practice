@@ -16,9 +16,12 @@ graphs = [
     },
 ]
 
+# O(1)
 def get_neighbors(g, v):
     return g[v]
 
+# overall time complexity: O(|V| + |E|) [THETA TIGHT BOUND]
+# visited: O(|V|) space complexity
 def dfs_helper(g, v, visited):
     print(v)
     visited.append(v)
