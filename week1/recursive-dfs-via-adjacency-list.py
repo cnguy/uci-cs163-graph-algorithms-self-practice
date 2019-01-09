@@ -10,8 +10,8 @@ graphs = [
         'B': ['D', 'F'],
         'C': ['G'],
         'D': [],
-        'E': [],
-        'F': ['E'],
+        'E': ['F'],
+        'F': ['B', 'E'],
         'G': [],
     },
 ]
@@ -32,9 +32,10 @@ def dfs_helper(g, v, visited):
     # This is important because that's the pro of adjacency lists. However,
     # they are not good at quickly stating if 2 vertices `x` and `y` are adjacent,
     # as you have to iterate over the list of neighbor vertices to determine this.
-    for vertex in get_neighbors(g, v):
-        if vertex not in visited:
-            dfs_helper(g, vertex, visited)
+    ns = get_neighbors(g, v)
+    for n in ns:
+        if n not in visited:
+            dfs_helper(g, n, visited)
 
 def dfs(g, root):
     dfs_helper(g, root, [])
