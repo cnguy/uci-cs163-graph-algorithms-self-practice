@@ -20,7 +20,7 @@ def get_neighbors(g, v):
     return g[v]
 
 # Goes from right to left in a neighbor list (opposite of recursive).
-# overall time complexity: same
+# same time complexity as recursive counterpart
 # worst-case space complexity: O(E)
 # e.g. graph {"A":["B,C,D,E,F,G"]}
 def dfs(g, root):
