@@ -34,8 +34,9 @@ def dfs(g, root):
             visited.append(v)
             ns = get_neighbors(g, v)
             for n in ns:
-                if n not in visited:
-                    s.append(n)
+       #         if n not in visited:
+        #            s.append(n)
+                s.append(n)
 
 if __name__ == '__main__':
     dfs(graphs[0], 'A')
